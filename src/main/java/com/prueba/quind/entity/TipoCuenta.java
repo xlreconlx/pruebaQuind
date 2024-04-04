@@ -27,9 +27,15 @@ public class TipoCuenta {
     @Column(name = "nombre", unique = true)
     private String nombre;
 
+    @Column(name = "valor_numero_cuenta")
+    private Integer valorNumeroCuenta;
+    
+    @Column(name = "numeroInicio")
+    private Integer numeroInicio;
+
     public TipoCuenta() {
     }
-    
+
     public Integer getIdTipoCuenta() {
         return idTipoCuenta;
     }
@@ -46,5 +52,20 @@ public class TipoCuenta {
         this.nombre = nombre;
     }
 
+    public Integer getValorNumeroCuenta() {
+        return valorNumeroCuenta;
+    }
+
+    public void setValorNumeroCuenta(Integer valorNumeroCuenta) {
+        this.valorNumeroCuenta = valorNumeroCuenta;
+    }
+
+    public Integer getNumeroInicio() {
+        return numeroInicio;
+    }
+
+    public void setNumeroInicio(Integer numeroInicio) {
+        this.numeroInicio = numeroInicio;
+    }
     
 }

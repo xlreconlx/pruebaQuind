@@ -8,7 +8,6 @@ import com.prueba.quind.entity.Cliente;
 import com.prueba.quind.model.RespuestaTransaccion;
 import com.prueba.quind.repository.ClienteRepository;
 import com.prueba.quind.repository.ProductoRepository;
-import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
