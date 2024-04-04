@@ -5,7 +5,7 @@
 package com.prueba.quind.repository;
 
 import com.prueba.quind.entity.Cliente;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @author ander
  */
 @Repository
-public interface ClienteRepository extends CrudRepository<Cliente, Long>{
-    
+public interface ClienteRepository extends JpaRepository <Cliente, Long>{
+    public Cliente findByNumeroIdentificacion(String numeroIdentificacion);
 }

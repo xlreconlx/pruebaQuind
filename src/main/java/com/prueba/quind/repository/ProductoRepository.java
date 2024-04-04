@@ -5,7 +5,8 @@
 package com.prueba.quind.repository;
 
 import com.prueba.quind.entity.Producto;
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  * @author ander
  */
 @Repository
-public interface ProductoRepository extends CrudRepository<Producto, Integer>{
-    
+public interface ProductoRepository extends JpaRepository<Producto, Integer>{
+    public List<Producto> findAllProductsByIdCliente(int idCliente);
 }
