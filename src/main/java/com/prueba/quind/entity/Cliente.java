@@ -4,6 +4,7 @@
  */
 package com.prueba.quind.entity;
 
+import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +12,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.time.LocalDate;
-
 
 /**
  *
@@ -44,15 +44,17 @@ public class Cliente {
     @Column(name = "fecha_nacimiento")
     private LocalDate fechaNacimiento;
 
-    @Column(name = "fecha_creacion")
+    // insertable = false para que jpa no ponga el registro como null 
+    // y se pueda guardar la valor de forma automatica con mysql
+    @Column(name = "fecha_creacion", insertable = false, updatable = false)
     private LocalDate fechaCreacion;
 
-    @Column(name = "fecha_modificacion")
+    @Column(name = "fecha_modificacion", insertable = false, updatable = false)
     private LocalDate fechaModificacion;
 
     public Cliente() {
     }
-    
+
     public Integer getIdCliente() {
         return idCliente;
     }

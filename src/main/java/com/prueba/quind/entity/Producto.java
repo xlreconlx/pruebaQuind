@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.sql.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -43,11 +44,11 @@ public class Producto {
     @Column(name = "exenta_gmf")
     private Boolean exentaGmf;
 
-    @Column(name = "fecha_creacion")
-    private Date fechaCreacion;
+    @Column(name = "fecha_creacion", insertable = false, updatable = false)
+    private LocalDate fechaCreacion;
 
-    @Column(name = "fecha_modificacion")
-    private Date fechaModificacion;
+    @Column(name = "fecha_modificacion", insertable = false, updatable = false)
+    private LocalDate fechaModificacion;
 
     public Producto() {
     }
@@ -108,19 +109,19 @@ public class Producto {
         this.exentaGmf = exentaGmf;
     }
 
-    public Date getFechaCreacion() {
+    public LocalDate getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDate fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public Date getFechaModificacion() {
+    public LocalDate getFechaModificacion() {
         return fechaModificacion;
     }
 
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDate fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 

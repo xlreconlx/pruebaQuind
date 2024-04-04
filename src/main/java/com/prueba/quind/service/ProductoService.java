@@ -20,6 +20,9 @@ public class ProductoService {
 
     @Autowired
     private ProductoRepository productoRepository;
+    
+    @Autowired
+    private TipoCuentaService tipoCuentaService;
 
     public List<Producto> getAllProductosByCliente(int idCliente) {
         return productoRepository.findAllProductsByIdCliente(idCliente);
@@ -35,6 +38,7 @@ public class ProductoService {
         }
         //activamos la cuenta con el valor 1 que corresponde a activa en la base de datos
         producto.setIdEstadoCuenta(1);
+        producto.setNumeroCuenta(tipoCuentaService.getNewNumeroCuenta(producto.getIdTipoCuenta()));
         try {
             productoRepository.save(producto);
             respuestaTransaccion.setMensaje("Se ha registrado correctamente.");

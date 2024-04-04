@@ -64,7 +64,7 @@ public class TransaccionService {
                     }
                     productoOrigen = productoRepository.findByIdProducto(transaccion.getIdCuentaOrigen());
 
-                    if (productoOrigen.getSaldo() - transaccion.getMonto() < 0) {
+                    if (productoOrigen.getIdTipoCuenta() == 2 && productoOrigen.getSaldo() - transaccion.getMonto() < 0) {
                         respuestaTransaccion.setMensaje("Error: el retiro sobrepasa los fondos disponibles");
                         respuestaTransaccion.setTransaccionCompletada(false);
                         return respuestaTransaccion;
@@ -97,7 +97,7 @@ public class TransaccionService {
                         return respuestaTransaccion;
                     }
 
-                    if (productoOrigen.getSaldo() - transaccion.getMonto() < 0) {
+                    if (productoOrigen.getIdTipoCuenta() == 2 && productoOrigen.getSaldo() - transaccion.getMonto() < 0) {
                         respuestaTransaccion.setMensaje("Error: la transferencia sobrepasa los fondos disponibles");
                         respuestaTransaccion.setTransaccionCompletada(false);
                         return respuestaTransaccion;

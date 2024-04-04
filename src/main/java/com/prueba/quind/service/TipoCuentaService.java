@@ -22,7 +22,10 @@ public class TipoCuentaService {
         TipoCuenta tipoCuenta =  tipoCuentaRepository.findByIdTipoCuenta(idTipoCuenta);
         int valorNumeroCuenta = tipoCuenta.getValorNumeroCuenta();
         int numeroInicio = tipoCuenta.getNumeroInicio();
-
+        
+        tipoCuenta.setValorNumeroCuenta(tipoCuenta.getValorNumeroCuenta() + 1);
+        tipoCuentaRepository.save(tipoCuenta);
+        
         return String.valueOf(numeroInicio) + String.format("%08d", valorNumeroCuenta);
     }
 }

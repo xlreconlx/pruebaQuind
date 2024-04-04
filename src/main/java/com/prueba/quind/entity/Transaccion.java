@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.sql.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -37,8 +38,8 @@ public class Transaccion {
     @Column(name = "monto")
     private Double monto;
 
-    @Column(name = "fecha_transaccion")
-    private Date fechaTransaccion;
+    @Column(name = "fecha_transaccion", insertable = false, updatable = false)
+    private LocalDate fechaTransaccion;
 
     public Transaccion() {
     }
@@ -83,11 +84,11 @@ public class Transaccion {
         this.monto = monto;
     }
 
-    public Date getFechaTransaccion() {
+    public LocalDate getFechaTransaccion() {
         return fechaTransaccion;
     }
 
-    public void setFechaTransaccion(Date fechaTransaccion) {
+    public void setFechaTransaccion(LocalDate fechaTransaccion) {
         this.fechaTransaccion = fechaTransaccion;
     }
 

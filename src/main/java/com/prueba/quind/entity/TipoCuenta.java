@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
  * @author ander
  */
 @Entity
-@Table(name = "TipoCuenta")
+@Table(name = "tipocuenta")
 public class TipoCuenta {
 
     @Id
@@ -30,7 +30,7 @@ public class TipoCuenta {
     @Column(name = "valor_numero_cuenta")
     private Integer valorNumeroCuenta;
     
-    @Column(name = "numeroInicio")
+    @Column(name = "numero_inicio")
     private Integer numeroInicio;
 
     public TipoCuenta() {

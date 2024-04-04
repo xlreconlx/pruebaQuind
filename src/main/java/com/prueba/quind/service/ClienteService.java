@@ -84,7 +84,7 @@ public class ClienteService {
         try {
             clienteRepository.save(cliente);
             respuestaTransaccion.setMensaje("Se ha actualizado correctamente.");
-            respuestaTransaccion.setTransaccionCompletada(false);
+            respuestaTransaccion.setTransaccionCompletada(true);
             return respuestaTransaccion;
         } catch (Exception e) {
             respuestaTransaccion.setMensaje("Ocurrio un error actualizando al cliente: " + e.toString());
