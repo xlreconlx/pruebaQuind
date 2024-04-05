@@ -25,7 +25,7 @@ public class TransaccionController {
     private TransaccionService transaccionService;
     
     @PostMapping("create")
-    public ResponseEntity<RespuestaTransaccion> createCliente(@RequestBody Transaccion transaccion){
+    public ResponseEntity<RespuestaTransaccion> createTransaccion(@RequestBody Transaccion transaccion){
         return ResponseEntity.ok(transaccionService.createTransaccion(transaccion));
     }
 }

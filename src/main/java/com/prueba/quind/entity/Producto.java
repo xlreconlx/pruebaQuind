@@ -53,6 +53,14 @@ public class Producto {
     public Producto() {
     }
 
+    public Producto(Integer idCliente, Integer idTipoCuenta, Integer idEstadoCuenta, Double saldo, Boolean exentaGmf) {
+        this.idCliente = idCliente;
+        this.idTipoCuenta = idTipoCuenta;
+        this.idEstadoCuenta = idEstadoCuenta;
+        this.saldo = saldo;
+        this.exentaGmf = exentaGmf;
+    }
+
     public Integer getIdProducto() {
         return idProducto;
     }

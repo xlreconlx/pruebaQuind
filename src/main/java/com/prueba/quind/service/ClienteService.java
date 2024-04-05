@@ -111,7 +111,7 @@ public class ClienteService {
         }
         try {
             clienteRepository.delete(cliente);
-            respuestaTransaccion.setMensaje("Se ha eliminado correctamente");
+            respuestaTransaccion.setMensaje("Se ha eliminado correctamente.");
             respuestaTransaccion.setTransaccionCompletada(true);
             return respuestaTransaccion;
         } catch (Exception e) {

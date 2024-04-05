@@ -55,6 +55,15 @@ public class Cliente {
     public Cliente() {
     }
 
+    public Cliente(String tipoIdentificacion, String numeroIdentificacion, String nombres, String apellido, String correoElectronico, LocalDate fechaNacimiento) {
+        this.tipoIdentificacion = tipoIdentificacion;
+        this.numeroIdentificacion = numeroIdentificacion;
+        this.nombres = nombres;
+        this.apellido = apellido;
+        this.correoElectronico = correoElectronico;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+    
     public Integer getIdCliente() {
         return idCliente;
     }
